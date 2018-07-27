@@ -1,5 +1,8 @@
 ### Udacity machine learning training projects in 2017
 
+#### Introduction: [Titanic Survival Exploration](https://github.com/yzzhang/machine-learning/blob/master/titanic_survival_exploration/report.pdf)
+In 1912, the ship RMS Titanic struck an iceberg on its maiden voyage and sank, resulting in the deaths of most of its passengers and crew. This introductory project explores a subset of the RMS Titanic passenger manifest to determine which features best predict whether someone survived or did not survive. 
+
 #### Project 1: [Boston Housing](https://github.com/yzzhang/machine-learning/blob/master/boston_housing/report.pdf)
 This project evaluates the performance and predictive power of a Decision Tree model that has been trained and tested on data collected from homes in suburbs of Boston, Massachusetts. A model trained on this data that is seen as a good fit could then be used to make certain predictions about a home — in particular, its monetary value. This model would prove to be invaluable for someone like a real estate agent who could make use of such information on a daily basis.
 
