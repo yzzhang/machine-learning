@@ -18,3 +18,5 @@ This project works towards constructing an optimized Q-Learning driving agent th
 #### Project 5: [Dog Identification App Using Convolutional Neural Networks](https://github.com/yzzhang/machine-learning/blob/master/dog-project/report.pdf)
 This project makes the first steps towards developing an algorithm that could be used as part of a mobile or web app. The app accepts any user-supplied image as input. If a dog is detected in the image, it will provide an estimate of the dog's breed. If a human is detected, it will provide an estimate of the dog breed that is most resembling. 
 
+#### Project 6: [Capstone](https://github.com/yzzhang/machine-learning/blob/master/capstone/capstone_report.pdf)
+This final project presents a brand new research paper entitled "Wisconsin Breast Cancer Diagnosis Deep Learning Revisited" based on a free-chosen topic.  
