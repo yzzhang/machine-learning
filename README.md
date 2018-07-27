@@ -21,4 +21,13 @@ This project makes the first steps towards developing an algorithm that could be
 #### Project 6: [Capstone](https://github.com/yzzhang/machine-learning/blob/master/capstone/capstone_report.pdf)
 This final project presents a brand new research paper entitled "Wisconsin Breast Cancer Diagnosis Deep Learning Revisited" based on a free-chosen topic.  
 
+<b> Abstract </b>
+
+The machine learning methodology has long been used in medical diagnosis. The Wisconsin Diagnostic Breast Cancer (WDBC) dataset has been widely used in research experiments.
+Most of publications focused on traditional machine learning methods such as decision trees and decision tree-based ensemble methods.
+
+Recently supervised deep learning method starts to get attention. For instance, Stahl and Geekette applied this method to the WDBC dataset for breast cancer diagnosis using feature values calculated from digitized image of a Fine Needle Aspirate (FNA) of a breast mass.
+
+In this paper, I propose a new supervised deep learning method for analyzing the same WDBC dataset for breast cancer diagnosis.
+
 #### Certificate: [Udacity Machine Learning Engineer Nanodegree](https://github.com/yzzhang/machine-learning/blob/master/certificates/Yuefeng_certificate_11_28_2017.pdf)
