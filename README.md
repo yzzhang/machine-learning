@@ -12,6 +12,9 @@ In this project, first several supervised algorithms are employed to accurately 
 #### Project 3: [Customer Segments](https://github.com/yzzhang/machine-learning/blob/master/customer_segments/report.pdf)
 This project analyzes a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for internal structure. One goal of this project is to best describe the variation in the different types of customers that a wholesale distributor interacts with. Doing so would equip the distributor with insight into how to best structure their delivery service to meet the needs of each customer.
 
-#### Project 4: [Dog Identification App Using Convolutional Neural Networks](https://github.com/yzzhang/machine-learning/blob/master/dog-project/report.pdf)
+#### Project 4: [Smart Cab Using Reforcement Leaning](https://github.com/yzzhang/machine-learning/blob/master/smartcab/report.pdf)
+This project works towards constructing an optimized Q-Learning driving agent that will navigate a Smartcab through its environment towards a goal. Since the Smartcab is expected to drive passengers from one location to another, the driving agent will be evaluated on two very important metrics: Safety and Reliability. A driving agent that gets the Smartcab to its destination while running red lights or narrowly avoiding accidents would be considered unsafe. Similarly, a driving agent that frequently fails to reach the destination in time would be considered unreliable. Maximizing the driving agent's safety and reliability would ensure that Smartcabs have a permanent place in the transportation industry.
+
+#### Project 5: [Dog Identification App Using Convolutional Neural Networks](https://github.com/yzzhang/machine-learning/blob/master/dog-project/report.pdf)
 This project makes the first steps towards developing an algorithm that could be used as part of a mobile or web app. The app accepts any user-supplied image as input. If a dog is detected in the image, it will provide an estimate of the dog's breed. If a human is detected, it will provide an estimate of the dog breed that is most resembling. 
 
