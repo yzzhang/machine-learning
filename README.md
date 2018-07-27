@@ -20,3 +20,5 @@ This project makes the first steps towards developing an algorithm that could be
 
 #### Project 6: [Capstone](https://github.com/yzzhang/machine-learning/blob/master/capstone/capstone_report.pdf)
 This final project presents a brand new research paper entitled "Wisconsin Breast Cancer Diagnosis Deep Learning Revisited" based on a free-chosen topic.  
+
+#### Certificate: [Udacity Machine Learning Engineer Nanodegree](https://github.com/yzzhang/machine-learning/blob/master/certificates/Yuefeng_certificate_11_28_2017.pdf)
