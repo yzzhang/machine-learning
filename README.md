@@ -27,7 +27,9 @@ This final project presents a brand new research paper entitled "Wisconsin Breas
 The machine learning methodology has long been used in medical diagnosis. The Wisconsin Diagnostic Breast Cancer (WDBC) dataset has been widely used in research experiments.
 Most of publications focused on traditional machine learning methods such as decision trees and decision tree-based ensemble methods.
 Recently supervised deep learning method starts to get attention. For instance, Stahl and Geekette applied this method to the WDBC dataset for breast cancer diagnosis using feature values calculated from digitized image of a Fine Needle Aspirate (FNA) of a breast mass.
-In this paper, I propose a new supervised deep learning method for analyzing the same WDBC dataset for breast cancer diagnosis.
+In this paper, I propose a new supervised deep learning method for analyzing the same WDBC dataset for breast cancer diagnosis. Experimental results demonstrate that the performance of the new deep learning network is robust and outperforms the performance results reported by both Stahl and Geekette.
 
 #### Certificates: 
 * [Udacity Machine Learning Engineer Nanodegree](https://github.com/yzzhang/machine-learning/blob/master/certificates/Yuefeng_certificate_11_28_2017.pdf)
+* [AWS Certified Solutions Architect - Associate](https://github.com/yzzhang/machine-learning/blob/master/certificates/AWS_Certified_Solutions_Architect_Associate_certificate.pdf)
+* [AWS Certified Developer - Associate](https://github.com/yzzhang/machine-learning/blob/master/certificates/AWS_Certified_Developer_Associate_Certificate.pdf)
