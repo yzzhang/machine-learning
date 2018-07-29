@@ -1,6 +1,6 @@
 ### Udacity machine learning training projects in 2017
 
-#### Introductory Project: [Titanic Survival Exploration](https://github.com/yzzhang/machine-learning/tree/master/titanic_survival_explorationhttps://github.com/yzzhang/machine-learning/tree/master/titanic_survival_exploration), Report in [PDF](https://github.com/yzzhang/machine-learning/blob/master/titanic_survival_exploration/report.pdf)
+#### Introductory Project: [Titanic Survival Exploration](https://github.com/yzzhang/machine-learning/blob/master/titanic_survival_exploration/report.pdf)
 In 1912, the ship RMS Titanic struck an iceberg on its maiden voyage and sank, resulting in the deaths of most of its passengers and crew. This introductory project explores a subset of the RMS Titanic passenger manifest to determine which features best predict whether someone survived or did not survive. 
 
 #### Project 1: [Boston Housing Using Decision Tree](https://github.com/yzzhang/machine-learning/blob/master/boston_housing/report.pdf)
