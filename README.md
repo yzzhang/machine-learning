@@ -20,7 +20,7 @@ This project demonstrates a solution to [The Interview Attendance Problem in Kag
 
 ### Unsupervised Learning
 
-#### [Customer Segments Using Unpervised Machine Learning Algorithm K-Means](https://github.com/yzzhang/machine-learning/tree/master/statistical_learning/Unsupervised_Learning/customer_segments)
+#### [Customer Segments via K-Means](https://github.com/yzzhang/machine-learning/tree/master/statistical_learning/Unsupervised_Learning/customer_segments)
 This project analyzes a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for internal structure. One goal of this project is to best describe the variation in the different types of customers that a wholesale distributor interacts with. Doing so would equip the distributor with insight into how to best structure their delivery service to meet the needs of each customer.
 
 ## Deep Learning
