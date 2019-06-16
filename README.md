@@ -37,7 +37,7 @@ Most of publications focused on traditional machine learning methods such as dec
 Recently supervised deep learning method starts to get attention. For instance, Stahl and Geekette applied this method to the WDBC dataset for breast cancer diagnosis using feature values calculated from digitized image of a Fine Needle Aspirate (FNA) of a breast mass.
 In this paper, I propose a new supervised deep learning method for analyzing the same WDBC dataset for breast cancer diagnosis. Experimental results demonstrate that the performance of the new deep learning network is robust and outperforms the performance results reported by both Stahl and Geekette.
 
-### Convolutional Learning
+### Convolutional Neural Networks
 
 #### [Dog Identification App Using Convolutional Neural Networks](https://github.com/yzzhang/machine-learning/tree/master/deep_learning/Convolutional_Neural_Networks/dog-project)
 This project makes the first steps towards developing an algorithm that could be used as part of a mobile or web app. The app accepts any user-supplied image as input. If a dog is detected in the image, it will provide an estimate of the dog's breed. If a human is detected, it will provide an estimate of the dog breed that is most resembling. 
