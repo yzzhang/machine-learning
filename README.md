@@ -16,7 +16,7 @@ This project evaluates the performance and predictive power of a <b>Decision Tre
 In this project, first several supervised algorithms (<b>Decision Tree</b>, <b>Random Forest</b>, <b>GBM</b>) are employed to accurately model individuals' income using data collected from the 1994 U.S. Census. Then the best candidate algorithm is chosen from preliminary results and further optimized to best model the data. The goal with this implementation is to construct a model that accurately predicts whether an individual makes more than $50,000. This sort of task can arise in a non-profit setting, where organizations survive on donations. Understanding an individual's income can help a non-profit better understand how large of a donation to request, or whether or not they should reach out to begin with. While it can be difficult to determine an individual's general income bracket directly from public sources, we can (as we will see) infer this value from other publically available features.
 
 #### [The Interview Attendance Problem](https://github.com/yzzhang/machine-learning/tree/master/statistical_learning/Supervised_Learning/Random_Forest/interview_attendance_problem)
-This project demonstrates a solution to the corresponding Kaggle [The Interview Attendance Problem](https://www.kaggle.com/vishnusraghavan/the-interview-attendance-problem/)
+This project demonstrates a solution to [The Interview Attendance Problem in Kaggle](https://www.kaggle.com/vishnusraghavan/the-interview-attendance-problem/)
 
 ### Unsupervised Learning
 
