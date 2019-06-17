@@ -23,7 +23,7 @@ project demonstrates a solution to [The Interview Attendance Problem in Kaggle](
 * Provide a probability and a prediction for the candidates where the "Observed Attendance" column is null.
 
 #### Logistic Regression
-The Capital One proprietary <font color="blue">Duplicate Management</font> project proposes and implements a new Open Source method to a duplicate management problem in Capital One using [Dedupe.IO](https://dedupe.io/). The L2 regularized logistic regression is used as default model for predicting duplicates. This method was presented in The Customer One 2019 Hackathon, Capital One, June 7, 2019.
+The Capital One proprietary <b>Duplicate Management</b> project proposes and implements a new Open Source method to a duplicate management problem in Capital One using [Dedupe.IO](https://dedupe.io/). The L2 regularized logistic regression is used as default model for predicting duplicates. This method was presented in The Customer One 2019 Hackathon, Capital One, June 7, 2019.
 
 ### 1.3 Unsupervised Learning
 
@@ -48,7 +48,7 @@ In this paper, I propose a new supervised deep learning method for analyzing the
 
 The [Dog Identification App](https://github.com/yzzhang/machine-learning/tree/master/deep_learning/Convolutional_Neural_Networks/dog-project) project makes the first steps towards developing an algorithm that could be used as part of a mobile or web app. The app accepts any user-supplied image as input. If a dog is detected in the image, it will provide an estimate of the dog's breed. If a human is detected, it will provide an estimate of the dog breed that is most resembling. 
 
-The Capital One proprietary <font color="blue">Deep Customer Matching</font> project explores an innovative method for probabilistic customer matching with face recognition using convolutional neural networks. A patent proposal has been submitted in Capital One, March 15, 2019.
+The Capital One proprietary <b>Deep Customer Matching</b> project explores an innovative method for probabilistic customer matching with face recognition using convolutional neural networks. A patent proposal has been submitted in Capital One, March 15, 2019.
 
 
 #### 2.3 Reinforcement Learning
