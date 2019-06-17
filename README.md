@@ -25,7 +25,7 @@ project demonstrates a solution to [The Interview Attendance Problem in Kaggle](
 #### Logistic Regression
 The [Duplicate Management]() project proposes and implements a new Open Source method to a duplicate management problem in Capital One using [Dedupe.IO](). The L2 regularized logistic regression is used as default model for predicting duplicates. This method was presented in The Customer One 2019 Hackathon, Capital One, June 7, 2019.
 
-### 1.2 Unsupervised Learning
+### 1.3 Unsupervised Learning
 
 #### PCA and K-Means
 The [Customer Segments Using PCA and K-Means](https://github.com/yzzhang/machine-learning/tree/master/statistical_learning/Unsupervised_Learning/customer_segments)
