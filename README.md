@@ -21,6 +21,13 @@ See publication: [Machine Learning Automation in Finance, Towards Data Science, 
 ## Certificates
 
 * [Udacity Machine Learning Engineer Nanodegree](https://github.com/yzzhang/machine-learning/blob/master/certificates/Yuefeng_certificate_11_28_2017.pdf)
+
 ![machine learning certificate](./image/machine-learning-certificate.png)
+
 * [AWS Certified Solutions Architect - Associate](https://github.com/yzzhang/machine-learning/blob/master/certificates/AWS_Certified_Solutions_Architect_Associate_certificate.pdf)
+
+![AWS architect certificate](./image/aws-architect.png)
+
 * [AWS Certified Developer - Associate](https://github.com/yzzhang/machine-learning/blob/master/certificates/AWS_Certified_Developer_Associate_Certificate.pdf)
+
+![AWS developer certificate](./image/aws-developer.png)
