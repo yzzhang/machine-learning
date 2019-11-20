@@ -1,6 +1,6 @@
 # Selected List of Publications on Data Science
 
-Also see my [Web site](https://yzzhang.github.io/) for details.
+### Also see my [Web site](https://yzzhang.github.io/) for details.
 
 
 ### 1. Deep Learning
