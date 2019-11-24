@@ -6,7 +6,7 @@
 ### 1. Deep Learning
 
 #### 1.1 Deep Clustering for Financial Market Segmentation
-See publication: [A deep learning approach for credit card customer clustering, Towards Data Science, Nov 23, 2019](https://medium.com/@zhangyuefeng1/deep-clustering-for-financial-market-segmentation-2a41573618cf?sk=a3f7a7e5d21f0ef47b2167ce3f0d0cb6)
+See publication: [A unsupervised deep learning approach for credit card customer clustering, Towards Data Science, Nov 23, 2019](https://medium.com/@zhangyuefeng1/deep-clustering-for-financial-market-segmentation-2a41573618cf?sk=a3f7a7e5d21f0ef47b2167ce3f0d0cb6)
 
 #### 1.2 Deep Multi-Input Models Transfer Learning for Image and Word Tag Recognition
 See publication: [A multi-models deep learning approach for image and text understanding, Towards Data Science, Nov 20, 2019](https://towardsdatascience.com/deep-multi-input-models-transfer-learning-for-image-and-word-tag-recognition-7ae0462253dc)
