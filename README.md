@@ -5,13 +5,16 @@
 
 ### 1. Deep Learning
 
-#### 1.1 Deep Multi-Input Models Transfer Learning for Image and Word Tag Recognition
+#### 1.1 Deep Clustering for Financial Market Segmentation
+See publication: [A deep learning approach for credit card customer clustering, Towards Data Science, Nov 23, 2019](https://medium.com/@zhangyuefeng1/deep-clustering-for-financial-market-segmentation-2a41573618cf?sk=a3f7a7e5d21f0ef47b2167ce3f0d0cb6)
+
+#### 1.2 Deep Multi-Input Models Transfer Learning for Image and Word Tag Recognition
 See publication: [A multi-models deep learning approach for image and text understanding, Towards Data Science, Nov 20, 2019](https://towardsdatascience.com/deep-multi-input-models-transfer-learning-for-image-and-word-tag-recognition-7ae0462253dc)
 
-#### 1.2 Deep Learning for Natural Language Processing Using word2vec-keras
+#### 1.3 Deep Learning for Natural Language Processing Using word2vec-keras
 See publication: [A deep learning approach for NLP by combining Word2Vec with Keras LSTM, Towards Data Science, Nov 3, 2019](https://towardsdatascience.com/deep-learning-for-natural-language-processing-using-word2vec-keras-d9a240c7bb9d)
 
-#### 1.3 Deep Learning in Winonsin Breast Cancer Diagnosis
+#### 1.4 Deep Learning in Winonsin Breast Cancer Diagnosis
 See publication: [A deep learning approach for healthcare, Towards Data Science, Oct 30, 2019](https://towardsdatascience.com/deep-learning-in-winonsin-breast-cancer-diagnosis-6bab13838abd)
 
 
