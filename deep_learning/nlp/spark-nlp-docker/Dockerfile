@@ -51,7 +51,7 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/" >> ~/.bashrc
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN pip3 install --upgrade pip
-RUN pip3 install --no-cache-dir notebook==5.* numpy pyspark==2.4.4 spark-nlp==2.4.5 pandas mlflow Keras scikit-spark scikit-learn scipy matplotlib pydot tensorflow graphviz
+RUN pip3 install --no-cache-dir notebook==5.* numpy pyspark==2.4.4 spark-nlp==2.5.1 pandas mlflow Keras scikit-spark scikit-learn scipy matplotlib pydot tensorflow graphviz
 
 USER root
 RUN chown -R ${NB_UID} ${HOME}

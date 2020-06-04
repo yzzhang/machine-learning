@@ -9,19 +9,19 @@ The Docker Hub user name (e.g., zhangyuefeng123) and home path (e.g., /home/yuef
 Method 1- Get the existing docker image for spark-nlp:
 
 ```bash
-docker pull zhangyuefeng123/nlp:1.0
+docker pull zhangyuefeng123/sparknlp:1.0
 ```
 
 Method 2- Build a new docker image
 
 ```bash
-docker build -t zhangyuefeng123/nlp:1.0 .
+docker build -t zhangyuefeng123/sparknlp:1.0 .
 ```
 
 2- Run the image locally with port binding
 
 ```bash
- docker run -it --volume $PWD:/home/yuefeng -p 8888:8888 -p 4040:4040 zhangyuefeng123/nlp:1.0
+ docker run -it --volume $PWD:/home/yuefeng -p 8888:8888 -p 4040:4040 zhangyuefeng123/sparknlp:1.0
 ```
 
 3- Open Jupyter notebooks inside your browser by using the token printed on the console like below:
