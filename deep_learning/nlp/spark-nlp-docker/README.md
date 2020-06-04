@@ -1,6 +1,8 @@
 # Docker Environment for Spark NLP
 
-This repository is to setup a docker environment for using [Spark NLP](https://www.johnsnowlabs.com/spark-nlp). It is based on the [Spark NLP Docker image](https://hub.docker.com/r/johnsnowlabs/spark-nlp-workshop).
+This repository is to show how to setup a docker environment for using [Spark NLP](https://www.johnsnowlabs.com/spark-nlp). It is based on the [Spark NLP Docker image](https://hub.docker.com/r/johnsnowlabs/spark-nlp-workshop).
+
+The Docker Hub user name (e.g., zhangyuefeng123) and home path (e.g., /home/yuefeng) need to be adjusted appropriately.
 
 ## Docker setup
 
