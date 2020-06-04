@@ -1,8 +1,12 @@
 # Running Spark NLP in Docker Container
 
-This repository is to show how to setup a docker environment for using [Spark NLP](https://www.johnsnowlabs.com/spark-nlp). It is based on the [Spark NLP Docker image](https://hub.docker.com/r/johnsnowlabs/spark-nlp-workshop).
-
-The Docker Hub user name (e.g., zhangyuefeng123) and home path (e.g., /home/yuefeng) need to be adjusted appropriately.
+This repository is to show how to setup a docker environment for running [Spark NLP](https://www.johnsnowlabs.com/spark-nlp) in docker container. It is based on the [Spark NLP Docker image](https://hub.docker.com/r/johnsnowlabs/spark-nlp-workshop) with the following modifications:
+* removed tutorials and related notebooks and data files
+* replaced Spark NLP 2.4.5 with Spark NLP 2.5.1
+* adjusted docker hub username 
+* adjusted the home directory name in docker container
+* added the command line --volumn option to map the current host direcrory to the home directory in docker container
+* removed Jupyter notebook configuration
 
 ## Docker setup
 
