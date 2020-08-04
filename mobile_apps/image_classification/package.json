@@ -29,7 +29,7 @@
     "expo-font": "~8.1.0",
     "expo-gl": "^8.1.0",
     "expo-web-browser": "~8.1.0",
-    "jpeg-js": "^0.3.7",
+    "jpeg-js": "^0.4.1",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
