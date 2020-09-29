@@ -1,106 +1,105 @@
-
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, StatusBar, ActivityIndicator, TouchableOpacity, Image } from 'react-native'
+import React, { useState, useEffect } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  ActivityIndicator,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import * as tf from '@tensorflow/tfjs';
 import '@tensorflow/tfjs-react-native';
 
-// import * as mobilenet from '@tensorflow-models/mobilenet'
 // see https://github.com/tensorflow/tfjs-models
-import * as cocossd from '@tensorflow-models/coco-ssd'
+import * as cocossd from '@tensorflow-models/coco-ssd';
 
-import Constants from 'expo-constants'
-import * as Permissions from 'expo-permissions'
-import * as jpeg from 'jpeg-js'
-import * as ImagePicker from 'expo-image-picker'
+import Constants from 'expo-constants';
+import * as Permissions from 'expo-permissions';
+import * as jpeg from 'jpeg-js';
+import * as ImagePicker from 'expo-image-picker';
 
-import { fetch } from '@tensorflow/tfjs-react-native'
+import { fetch } from '@tensorflow/tfjs-react-native';
 
-export default class CocoSsdScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isTfReady: false,
-      isModelReady: false,
-      predictions: null,
-      image: null
+export default CocoSsdScreen = () => {
+  const [isTfReady, setIsTfReady] = useState(false);
+  const [isModelReady, setIsModelReady] = useState(false);
+  const [predictions, setPredictions] = useState(null);
+  const [image, setImage] = useState(null);
+  const [model, setModel] = useState(null);
+
+  useEffect(() => {
+    const startup = async () => {
+      await tf.ready(); // preparing TensorFlow
+      setIsTfReady(true);
+      setModel(await cocossd.load()); // preparing COCO-SSD model
+      setIsModelReady(true);
+      getPermissionAsync(); // get permission for accessing camera on mobile device
     };
-  }
+    startup();
+  }, []);
 
-  async componentDidMount() {
-    await tf.ready(); // preparing TensorFlow
-    this.setState({ isTfReady: true,});
-
-    // this.model = await mobilenet.load(); // preparing MobileNet model
-    this.model = await cocossd.load(); // preparing COCO-SSD model
-    this.setState({ isModelReady: true });
-
-    this.getPermissionAsync(); // get permission for accessing camera on mobile device
-  }
-
-  getPermissionAsync = async () => {
+  const getPermissionAsync = async () => {
     if (Constants.platform.ios) {
-        const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL)
-        if (status !== 'granted') {
-            alert('Please grant camera roll permission for this project!')
-        }
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (status !== 'granted') {
+        alert('Please grant camera roll permission for this project!');
+      }
     }
-  }
+  };
 
-  imageToTensor(rawImageData) {
-    const TO_UINT8ARRAY = true
-    const { width, height, data } = jpeg.decode(rawImageData, TO_UINT8ARRAY)
+  const imageToTensor = (rawImageData) => {
+    const TO_UINT8ARRAY = true;
+    const { width, height, data } = jpeg.decode(rawImageData, TO_UINT8ARRAY);
     // Drop the alpha channel info for mobilenet
-    const buffer = new Uint8Array(width * height * 3)
-    let offset = 0 // offset into original data
+    const buffer = new Uint8Array(width * height * 3);
+    let offset = 0; // offset into original data
     for (let i = 0; i < buffer.length; i += 3) {
-      buffer[i] = data[offset]
-      buffer[i + 1] = data[offset + 1]
-      buffer[i + 2] = data[offset + 2]
+      buffer[i] = data[offset];
+      buffer[i + 1] = data[offset + 1];
+      buffer[i + 2] = data[offset + 2];
 
-      offset += 4
+      offset += 4;
     }
 
-    return tf.tensor3d(buffer, [height, width, 3])
-  }
+    return tf.tensor3d(buffer, [height, width, 3]);
+  };
 
-  detectObjects = async () => {
+  const detectObjects = async (source) => {
     try {
-      const imageAssetPath = Image.resolveAssetSource(this.state.image)
+      const imageAssetPath = Image.resolveAssetSource(source);
 
-      const response = await fetch(imageAssetPath.uri, {}, { isBinary: true })
-      const rawImageData = await response.arrayBuffer()
-      const imageTensor = this.imageToTensor(rawImageData)
-      const predictions = await this.model.detect(imageTensor)
+      const response = await fetch(imageAssetPath.uri, {}, { isBinary: true });
+      const rawImageData = await response.arrayBuffer();
+      const imageTensor = imageToTensor(rawImageData);
+      const newPredictions = await model.detect(imageTensor);
+      setPredictions(newPredictions);
 
-      this.setState({ predictions: predictions })
-      // this.setState({ image_uri: imageAssetPath.uri })
-
-      console.log('----------- predictions: ', predictions);
-
+      console.log('----------- predictions: ', newPredictions);
     } catch (error) {
-      console.log('Exception Error: ', error)
+      console.log('Exception Error: ', error);
     }
-  }
+  };
 
-  selectImage = async () => {
+  const selectImage = async () => {
     try {
       let response = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
         allowsEditing: true,
-        aspect: [4, 3]
-      })
+        aspect: [4, 3],
+      });
 
       if (!response.cancelled) {
-        const source = { uri: response.uri }
-        this.setState({ image: source })
-        this.detectObjects()
+        const source = { uri: response.uri };
+        setImage(source);
+        detectObjects(source);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   /*
   [{
@@ -113,9 +112,9 @@ export default class CocoSsdScreen extends React.Component {
   score: 0.74644153267145157
   }]
   */
-  renderPrediction = (prediction, index) => {
+  const renderPrediction = (prediction, index) => {
     const pclass = prediction.class;
-    const score  = prediction.score;
+    const score = prediction.score;
     const x = prediction.bbox[0];
     const y = prediction.bbox[1];
     const w = prediction.bbox[2];
@@ -123,20 +122,20 @@ export default class CocoSsdScreen extends React.Component {
 
     return (
       <View style={styles.welcomeContainer}>
-        <Text  key={index} style={styles.text}>
-          Prediction: {pclass} {', '} Probability: {score} {', '} Bbox: {x} {', '} {y} {', '} {w} {', '} {h} 
+        <Text key={index} style={styles.text}>
+          Prediction: {pclass} {', '} Probability: {score} {', '} Bbox: {x}{' '}
+          {', '} {y} {', '} {w} {', '} {h}
         </Text>
       </View>
-    )
-  }
+    );
+  };
 
-  render() {
-    const { isTfReady, isModelReady, predictions, image } = this.state
-
-    return (
-      <View style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
+  return (
+    <View style={styles.container}>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}
+      >
         <View style={styles.welcomeContainer}>
           <Image
             source={
@@ -147,47 +146,47 @@ export default class CocoSsdScreen extends React.Component {
             style={styles.welcomeImage}
           />
 
-        <StatusBar barStyle='light-content' />
-        <View style={styles.loadingContainer}>
-          <Text style={styles.text}>
-            TensorFlow.js ready? {isTfReady ? <Text>✅</Text> : ''}
-          </Text>
+          <StatusBar barStyle="light-content" />
+          <View style={styles.loadingContainer}>
+            <Text style={styles.text}>
+              TensorFlow.js ready? {isTfReady ? <Text>✅</Text> : ''}
+            </Text>
 
-          <View style={styles.loadingModelContainer}>
-            <Text style={styles.text}>COCO-SSD model ready? </Text>
-            {isModelReady ? (
-              <Text style={styles.text}>✅</Text>
-            ) : (
-              <ActivityIndicator size='small' />
+            <View style={styles.loadingModelContainer}>
+              <Text style={styles.text}>COCO-SSD model ready? </Text>
+              {isModelReady ? (
+                <Text style={styles.text}>✅</Text>
+              ) : (
+                <ActivityIndicator size="small" />
+              )}
+            </View>
+          </View>
+          <TouchableOpacity
+            style={styles.imageWrapper}
+            onPress={isModelReady ? selectImage : undefined}
+          >
+            {image && <Image source={image} style={styles.imageContainer} />}
+
+            {isModelReady && !image && (
+              <Text style={styles.transparentText}>Tap to choose image</Text>
             )}
+          </TouchableOpacity>
+          <View style={styles.predictionWrapper}>
+            {isModelReady && image && (
+              <Text style={styles.text}>
+                Predictions: {predictions ? '' : 'Detecting...'}
+              </Text>
+            )}
+
+            {isModelReady &&
+              predictions &&
+              predictions.map((p, index) => renderPrediction(p, index))}
           </View>
         </View>
-        <TouchableOpacity
-          style={styles.imageWrapper}
-          onPress={isModelReady ? this.selectImage : undefined}>
-          {image && <Image source={image} style={styles.imageContainer} />}
-
-          {isModelReady && !image && (
-            <Text style={styles.transparentText}>Tap to choose image</Text>
-          )}
-        </TouchableOpacity>
-        <View style={styles.predictionWrapper}>
-          {isModelReady && image && (
-            <Text style={styles.text}>
-              Predictions: {predictions ? '' : 'Detecting...'}
-            </Text>
-          )}
-
-          {isModelReady &&
-            predictions &&
-            predictions.map((p, index) => this.renderPrediction(p, index))}
-        </View>
-        </View>
-        </ScrollView>
-      </View>
-    )
-  }
-}
+      </ScrollView>
+    </View>
+  );
+};
 
 CocoSsdScreen.navigationOptions = {
   header: null,
@@ -196,7 +195,7 @@ CocoSsdScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#171f24'
+    backgroundColor: '#171f24',
   },
   welcomeContainer: {
     alignItems: 'center',
@@ -215,15 +214,15 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     marginTop: 80,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   text: {
     color: '#ffffff',
-    fontSize: 16
+    fontSize: 16,
   },
   loadingModelContainer: {
     flexDirection: 'row',
-    marginTop: 10
+    marginTop: 10,
   },
   imageWrapper: {
     width: 280,
@@ -236,7 +235,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     position: 'relative',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   imageContainer: {
     width: 250,
@@ -245,28 +244,28 @@ const styles = StyleSheet.create({
     top: 10,
     left: 10,
     bottom: 10,
-    right: 10
+    right: 10,
   },
   predictionWrapper: {
     height: 100,
     width: '100%',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   transparentText: {
     color: '#ffffff',
-    opacity: 0.7
+    opacity: 0.7,
   },
   footer: {
-    marginTop: 40
+    marginTop: 40,
   },
   poweredBy: {
     fontSize: 20,
     color: '#e69e34',
-    marginBottom: 6
+    marginBottom: 6,
   },
   tfLogo: {
     width: 125,
-    height: 70
-  }
-})
+    height: 70,
+  },
+});
